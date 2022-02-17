@@ -1,6 +1,7 @@
 import { CreditCard, DollarSign } from 'react-feather'
 import Button from '../../custom/Button'
 import {useState, useEffect} from 'react'
+import {connect} from '../../../pages/api/services/Api'
 
 export default function BuyElectricity() {
 
@@ -46,9 +47,33 @@ export default function BuyElectricity() {
           }));
         }
       }, [meter.amount, meter.meterNumber]);
+
+      async function submitForm(){
+
+        if(meter.meterNumber!=='' && meter.amount !==''){
+
+          try{
+              const response = await connect('token','POST',{
+                amount_of_money:meter.amount,
+                meter_number:meter.meterNumber
+              })
+              if(response){
+                alert("Token given")
+              }
+              else alert('failed')
+          }catch(e){
+              alert(e.message)
+          }
+        }
+
+
+      }
     return (
         <div className="">
-            <form action="" className="text-sm space-y-5 text-gray-500">
+            <form action="" className="text-sm space-y-5 text-gray-500"
+            onSubmit={()=>{submitForm()}}
+            
+            >
                 <div className="form-group">
                     <label htmlFor="" className="block text-gray-500">
                         Meter number
