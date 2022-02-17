@@ -69,7 +69,7 @@ export default function BuyElectricity() {
 
       }
     return (
-        <div className="">
+        <div className="buy_electricity">
             <form action="" className="text-sm space-y-5 text-gray-500"
             onSubmit={()=>{submitForm()}}
             
