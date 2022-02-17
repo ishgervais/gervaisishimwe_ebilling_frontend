@@ -6,20 +6,17 @@ export default function NavbarLInk(props) {
     return (
 
          
-        <div className=" cursor-pointer flex items-center gap-2 hover:bg-orange-400 rounded p-2 "
+        <div className=" cursor-pointer flex items-center gap-2 hover:bg-red-400 rounded p-2 "
         onClick={()=>router.push(props.path)}
         >
        {props.icon}
-        <Link href={props.path}>
-            
-            <a
-                className={`bold capitalize
+        <Link to={props.path} className={`bold capitalize
         ${props.size ? ' text-' + props.size : 'sm'}
         
         `}
             >
-                {props.title}{' '}
-            </a>
+                {props.title}
+        
         </Link>
     </div>
 

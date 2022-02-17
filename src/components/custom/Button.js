@@ -2,7 +2,7 @@
 export default function Button(props) {
     return (
         <button
-            className={`my-5 w-full p-3 rounded text-white bg-orange-500
+            className={`my-5 w-full p-3 rounded text-white bg-red-500
             ${props.loading && 'opacity-60'} hover:opacity-60
             
             `}

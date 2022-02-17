@@ -5,7 +5,7 @@ import NavbarLInk from './NavbarLInk'
 export default function Navbar() {
     return (
         <div
-            className="bg-orange-500 text-white w-full h-12 p-3 top-0 sticky
+            className="bg-red-500 text-white w-full h-12 p-3 top-0 sticky
     flex justify-center
         
         "
